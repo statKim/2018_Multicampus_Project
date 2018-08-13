@@ -1,0 +1,11 @@
+create table address ( -- 지역구분 table
+	goo varchar(10),  -- 구 구분
+	marketcode varchar(30)  -- 상권코드
+}
+
+create table rent ( -- 임대료 table
+	goo varchar(10),	-- 구 구분
+	avgRent number(5,2),	-- 평균 임대료
+	geoMeasure varchar(20)	-- 구를 4개 카테고리로 구분
+							-- (도심지역, 강남지역, 영등포신촌지역, 기타지역)
+)
