@@ -1,0 +1,30 @@
+<html>
+  <head>
+      <title>도봉구 성별 매출</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['성별', '(단위 : 원)'],
+          ['남자',    1725218.13953269],
+          ['여자',      2408455.94335577]
+        ]);
+
+        var options = {
+          title: '도봉구 Profit /Gender'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

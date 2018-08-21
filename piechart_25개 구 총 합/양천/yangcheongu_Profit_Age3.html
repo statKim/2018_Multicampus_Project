@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Age', 'Percentage'],
+          ['Profit people_10',     157975.7036],
+          ['Profit people_20',     1311061.734],
+          ['Profit people_30',     1370278.394],
+          ['Profit people_40',     1081389.906	],
+          ['Profit people_50',     654108.2254],
+          ['Profit people_60',     202248.0644]
+        ]);
+
+        var options = {
+          title: 'yangcheongu Profit people/Age'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
