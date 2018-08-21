@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Age', 'Percentage'],
+          ['Living people_10',     40685],
+          ['Living people_20',     36537],
+          ['Living people_30',     41928],
+          ['Living people_40',     44814],
+          ['Living people_50',     42589],
+          ['Living people_60',     60988]
+        ]);
+
+        var options = {
+          title: 'eunpyeong-gu Living people/Age'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

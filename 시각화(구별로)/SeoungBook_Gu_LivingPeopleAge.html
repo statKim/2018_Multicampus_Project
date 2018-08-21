@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Age', 'Percentage'],
+          ['10s',     18855],
+          ['20s',      27833],
+          ['30s',      22024],
+          ['40s',      22681],
+          ['50s',      22070],
+          ['60s',      33997]
+        ]);
+
+        var options = {
+          title: 'SeoungBook-Gu LivingPeople/Age'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

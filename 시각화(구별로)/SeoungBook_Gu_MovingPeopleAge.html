@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Age', 'Percentage'],
+          ['10s',     784598],
+          ['20s',      2389435],
+          ['30s',      1000369],
+          ['40s',      887465],
+          ['50s',      833134],
+          ['60s',      674690]
+        ]);
+
+        var options = {
+          title: 'SeoungBook-Gu MovingPeople/Age'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
