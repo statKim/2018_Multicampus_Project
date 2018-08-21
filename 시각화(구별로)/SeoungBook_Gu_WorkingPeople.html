@@ -8,17 +8,13 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Age', 'Percentage'],
-          ['10s',     74725.47379],
-          ['20s',      1287835.811],
-          ['30s',      1108721.308],
-          ['40s',      641022.3311],
-          ['50s',      385778.8266],
-          ['60s',      165881.1885]
+          ['Gender', 'Percentage'],
+          ['Female',     20137],
+          ['Male',      22852]
         ]);
 
         var options = {
-          title: 'KwangAk-Gu Profit/Age'
+          title: 'SeoungBook-Gu WorkingPeople/Gender'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
