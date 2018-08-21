@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Age', 'Percentage'],
+          ['Working people_10',     575],
+          ['Working people_20',     15963],
+          ['Working people_30',     20900],
+          ['Working people_40',     24840],
+          ['Working people_50',     17165],
+          ['Working people_60',     5863]
+        ]);
+
+        var options = {
+          title: 'yongsangu Working people/Age'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
