@@ -1,0 +1,34 @@
+<html>
+  <head>
+      <title>서초구</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['나이대', '단위: 명'],
+          ['LivingPeople_10',     17998],
+          ['LivingPeople_20',      17615],
+          ['LivingPeople_30',      22423],
+          ['LivingPeople_40',      19914],
+          ['LivingPeople_50',      16336],
+          ['LivingPeople_60',      21057]
+        ]);
+
+        var options = {
+          title: 'Living people/Age'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
