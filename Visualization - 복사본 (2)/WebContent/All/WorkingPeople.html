@@ -1,0 +1,55 @@
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Gu", "people", { role: "style" } ],
+        ["강남구", 27345, "#black"],
+        ["강동구", 10474, "#black"],
+        ["강북구", 20310, "#black"],
+        ["강서구", 21481, "#black"],
+        ["관악구",28450,"#black"],
+        ["광진구",6106,"#black"],
+        ["구로구",33052,"#black"],
+        ["금천구",21934,"#black"],
+        ["노원구",10707,"#black"],
+        ["도봉구",7915,"#black"],
+        ["동대문구",27357,"#black"],
+        ["동작구",5790,"#black"],
+        ["마포구",78078,"#black"],
+        ["서대문구",57978,"#black"],
+        ["서초구",93465,"red"],
+        ["성동구",89616,"#black"],
+        ["성북구",42989,"#black"],
+        ["송파구",36205,"#black"],
+        ["양천구",5605,"#black"],
+        ["영등포구",45131,"#black"],
+        ["용산구", 85307,"#black"],
+        ["은평구",25818,"#black"],
+        ["종로구",129191,"red"],
+        ["중구", 152004,"red"],
+        ["중랑구",12665,"#black"]
+        
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+    	title: "Comparison of WorkingPeople in Seoul sorted by Gu",
+        width: 2400,
+        height: 900,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
