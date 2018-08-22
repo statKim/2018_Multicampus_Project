@@ -4,25 +4,20 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 	<style>
-		button {
-  		  margin: auto;
-  		  width: 20%;
-		  border: none;
-    	  color: black;
-   		  background-color: #dfdfff;
-    	  text-align: center;
-    	  align: center;
+		.menu_box{
+		 	display:inline;
+			width:150px;
+			height:40px;
+			text-align:center;
+			margin:10px;
+			border:solid 1px #000;
 		}
-		.columnchart_values {
-			margin: auto;
-			width:200px;
-			align: center;
-			border: none;
-		}
-		.all{
-			position: absolute;
-			right:0;
-			bottom: 0;
+		.chart_menu{
+			display:center;
+			width:2400;
+			height:900;
+			margin:10px;
+			border:none
 		}
 	</style>
 	    
@@ -44,8 +39,8 @@
                        2]);
       var options = {
     	title: "Comparison of TotalProfit of Cafe in Seoul sorted by Gu",
-        width: 1200,
-        height: 450,
+        width: 2400,
+        height: 900,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
@@ -66,8 +61,8 @@
 
       var options = {
     		  title: "Comparison of LivingPeople in Seoul sorted by Gu",
-    		  width: 1200,
-    	        height: 450,
+        width: 2400,
+        height: 900,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
@@ -88,8 +83,8 @@
 
       var options = {
     	title: "Comparison of WorkingPeople in Seoul sorted by Gu",
-    	width: 1200,
-        height: 450,
+        width: 2400,
+        height: 900,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
@@ -111,13 +106,13 @@
                        2]);
 
       var options = {
-    	//title: "Comparison of MovingPeople in Seoul sorted by Gu",
+    	title: "Comparison of MovingPeople in Seoul sorted by Gu",
     	//if(drawChart(MovingPeople)) =  title: "Comparison of MovingPeople in Seoul sorted by Gu";
         //else if(drawChart(LivingPeople)) = "Comparison of LivingPeople in Seoul sorted by Gu";
         //else if(drawChart(WorkingPeople)) = "Comparison of WorkingPeople in Seoul sorted by Gu";
         //else if(drawChart(TotalProfit)) = "Comparison of TotalProfit in Seoul sorted by Gu";,
-        width: 1200,
-        height: 450,
+        width: 2400,
+        height: 900,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
@@ -129,8 +124,9 @@
 </head>
 
 <body>
-	<h2 align=center>한 눈에 보기</h2>
-	<div>
+	<h2>한 눈에 보기</h2>
+	
+	
 	<script type="text/javascript">
 		function ajaxReq(chartNum) {
 			var xhttp = new XMLHttpRequest();
@@ -149,13 +145,19 @@
 		xhttp.send();
 		}
 	</script>
-
-	<center>
-	<button id="b1" onclick="ajaxReq(1)">행정구별 총 매출액</button>
-	<button id="b2" onclick="ajaxReq(2)">행정구별 상주인구</button>
-	<button id="b3" onclick="ajaxReq(3)">행정구별 직장인구</button>
-	<button id="b4" onclick="ajaxReq(4)">행정구별 유동인구</button>
-	</center>
+	
+	<div id = "chart_box1"></div>
+	<br>
+	<br>
+	<hr>	
+	
+	<br>
+	<br>
+	
+	<button onclick="ajaxReq(1)">TotalProfit</button>
+	<button onclick="ajaxReq(2)">Living</button>
+	<button onclick="ajaxReq(3)">Working</button>
+	<button onclick="ajaxReq(4)">Moving</button>
 	<!--
 	<div class="menu_box" ><button type="button" id="TotalProfit" onclick="ajaxReq(TotalProfit)'" >전체 매출액</button></div>
 	<script type="text/javascript">
@@ -218,11 +220,9 @@
 	</script>
 	-->
 	
-	<center><div id="columnchart_values"></div>
-	</center>
+	<div class="chart_box" id = "chart_box" style="width:900px; height: 300px;"></div>
 	
-
-	<button id="all" onclick="location.href='test.html'">전체 보기</button>
-	</div>
+	<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+	
 </body>
 </html>
