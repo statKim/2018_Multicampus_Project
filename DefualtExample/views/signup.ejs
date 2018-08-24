@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>예상 매출액 예측 결과</title>
+    <style>
+        P{
+    font-size:30px;
+    
+}
+    </style>
+    <link rel="stylesheet" href="/css/w3.css">
+<link rel='stylesheet' href='css/youtubeControll.css' />
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>예상 매출액 예측 결과</title>
+<link rel ="stylesheet" type ="text/css" href ="css/signup.css">
+<link rel ="stylesheet" type ="text/css" href ="css/signup.css">
+</head>
+<body>
+    <div class="w3-top">
+		<div class="w3-bar w3-white w3-card" id="myNavbar">
+			<a href="/homepage.html#home" class="w3-bar-item w3-button w3-wide"><img src="/img/logo.png"></a>
+			<!-- Right-sided navbar links -->
+			<div class="w3-right w3-hide-small">
+				<a href="/homepage.html#about" class="w3-bar-item w3-button">ABOUT</a> 
+				<a href="/youtube.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i>STUDY</a> 
+				<a href="/signup.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i>MARKET ANALYSIS</a>
+				<a href="/visualize.html" class="w3-bar-item w3-button" ><i class="fa fa-usd"></i>MARKET STATUS</a> 
+				<a href="/process/board" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i>BOARD</a>
+			</div>
+			<!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+			<a href="javascript:void(0)" 
+				class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()"> <i class="fa fa-bars"></i>
+			</a>
+		</div>
+	</div>
+	<header>
+		<!--<jsp:include page="header.jsp" flush="false" />-->
+	</header>
+	
+	<div id ="toppadding"></div>
+	<form method ="post" action ="/process/value" > <!-- 서버로 데이터 넘기는 form --> 
+		<div>
+		<table align="center">
+			<tr><td height=100px colspan="2"></td></tr>    <!-- 간격띠는 행 -->
+			<tr><td colspan="2" align="center"><a href ="form.jsp"><img width="800px" style="overray" src = "/img/frame.png"></a></td></tr>    <!-- 자러왔다. 이미지  -->
+			<tr><th colspan="2" height="20px"><h2>예상 매출액 예측</h2></th></tr>
+			<tr><th align ="left">&emsp;지역(구) </th><td ><input type ="text" id ="region" name ="region" size=40 value = <%= rows.region%> ></td></tr>
+			<tr><th align="left" >&emsp;상주인구수 </th>
+				<td ><input type ="text" id ="livingPeople" name ="livingPeople" size=40 value = <%= rows.livingPeople%> ></td></tr>
+			<tr><th align="left">&emsp;유사점포수  </th>
+				<td ><input type ="text" id= "numberStore" name ="numberStore" size=40 value = <%= rows.numberStore%>></td></tr>
+			<tr><th align ="left">&emsp;직장인구수  </th>
+				<td ><input type ="text" id ="workingPeople" name ="workingPeople" size=40 value = <%= rows.workingPeople%>></td></tr>
+			<tr><th align ="left">&emsp;유동인구수  </th>
+				<td ><input type ="text" id="movingPeople" name ="movingPeople" size=40 value = <%=rows.movingPeople%>></td></tr>
+			<tr><td colspan ="2"></td></tr>
+			<tr><td></td></tr>
+			<tr><td></td></tr>
+			<tr><td></td></tr>
+			<tr><td></td></tr>
+			<tr><td></td></tr>
+			<tr><td></td></tr>
+			<tr><td></td></tr>
+			<tr><td></td></tr>
+			
+		  <tr><td colspan="2" align="center"> <p style="color:#ff8000">예상매출액 : ￦<%=rows.predOutput%></p></td></tr>
+            <tr><td colspan="2" align="center"><a href = "/signup.html"></a><img src ="/img/back.png"></td></tr> 
+			<tr><td colspan="2" align="center"><img width="800px" src = "/img/frame2.png"></td></tr>  
+		      
+
+            
+		
+		</table>
+		</div>
+	</form>
+
+	
+	
+	<footer class="w3-center w3-black w3-padding-64" z-index=1>
+		<a href="#home" class="w3-button w3-light-grey"><i
+			class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+		<div class="w3-xlarge w3-section">
+			<a class="fa fa-facebook-official w3-hover-opacity" href="http://www.facebook.com/" ></a> 
+			<a class="fa fa-instagram w3-hover-opacity" href="https://www.instagram.com/?hl=ko"></a> 
+			<a class="fa fa-snapchat w3-hover-opacity" href=https://www.snapchat.com/></a> 
+			<a class="fa fa-pinterest-p w3-hover-opacity" href="https://www.pinterest.co.kr/"></a> 
+			<a class="fa fa-twitter w3-hover-opacity" href="https://twitter.com/?lang=ko"></a> 
+			<a class="fa fa-linkedin w3-hover-opacity" href="https://kr.linkedin.com/"></a>
+		</div>
+		<p>
+			Powered by <a href="http://localhost/Visualization/homepage.html"
+				title="W3.CSS" target="_blank" class="w3-hover-text-green">(주)인수합병</a>
+		</p>
+	</footer>
+
+</body>
+</html>

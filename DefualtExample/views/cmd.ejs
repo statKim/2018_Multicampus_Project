@@ -1,0 +1,16 @@
+<!DOCTYPE html>                                            
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>cmd <%= title %></h1>
+    <p>Welcome to <%= data %></p>
+    <form id='target' action='/execute/cmd'>
+      <input id='target_input' name='cmd' type='text' value="pwd">
+      <input type='submit' value='submit'>
+    </form>
+    <h1><%= data %></h1>
+  </body>
+</html>

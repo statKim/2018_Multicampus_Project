@@ -17,7 +17,7 @@ library(RMySQL)
 library(randomForest)
 
 # MySql DB Connection 
-con <- dbConnect(MySQL(), dbname = 'khs', user = 'root', password="1234")
+con <- dbConnect(MySQL(), dbname = 'test', user = 'root', password="1234")
 
 # db의 table 확인
 #dbListTables(con)
