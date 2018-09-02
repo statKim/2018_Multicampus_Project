@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+  <head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/w3.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"	charset="utf-8"></script>   
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+<!-- custom css-->
+<link rel="stylesheet" type="text/css" href="seoul.css">
+<!-- tooltipster -->
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  
+  </head>
+  
+  <style>
+	#table{
+		border-style:none;
+	}
+	
+	#content{
+		height:300px;
+	}
+  </style>
+  
+  <body>
+  	<div class="w3-top">
+		<div class="w3-bar w3-white w3-card" id="myNavbar">
+			<a href="/homepage.html" class="w3-bar-item w3-button w3-wide"><img src="../img/logo.png"></a>
+			<!-- Right-sided navbar links -->
+			<div class="w3-right w3-hide-small">
+				<a href="/homepage.html#about" class="w3-bar-item w3-button">ABOUT</a> 
+				<a href="/youtube.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i>STUDY</a> 
+				<a href="/signup.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i>MARKET ANALYSIS</a>
+				<a href="/visualize.html" class="w3-bar-item w3-button" ><i class="fa fa-usd"></i>MARKET STATUS</a> 
+				<a href="/process/board" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i>BOARD</a>
+			</div>
+			<!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+			<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+				onclick="w3_open()"> <i class="fa fa-bars"></i>
+			</a>
+		</div><br>
+		
+	</div><br>
+	<br><br><br><br>
+  	
+  	<div colspan="2" align="center"><a href ="form.jsp"><img width="800px" style="overray" src = "../img/frame.png"></a></div>    <!-- 자러왔다. 이미지  -->
+  
+    <h1 align="center"><%= title %></h1>
+    <form id="form" method="post" action="/board/write" onsubmit="onWriteSubmit()">
+      <table align="center" id="table">
+        <tr>
+          <th>제목</th>
+          <td><input type="text" name="title" id="title" size=50 required /></td>
+        </tr>
+        <tr>
+          <th>글쓴이</th>
+          <td><input type="text" name="writer" id="writer" required/></td>
+        </tr>
+        <tr>
+          <th>비밀번호</th>
+          <td><input type="password" name="password" id="password" required/></td>
+        </tr>
+        <tr>
+          <th>내용</th>
+          <td><textarea cols="50" role="12" name="content" id="content" required></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="right"><input type="submit" value="등록"></td>
+        </tr>
+      </table>
+    </form>
+  <script>
+    function onWriteSubmit()
+    {
+      if ( $("#writer").val().trim() == "" )
+      {
+        var message = "아이디를 입력해 주세요";
+        $("#writer").val("");
+        $("#writer").focus();
+        alert(message);
+        return false;
+      }
+
+      if ( $("#title").val().trim() == "" )
+      {
+        var message = "제목을 입력해 주세요";
+        $("#title").val("");
+        $("#title").focus();
+        alert(message);
+        return false;
+      }
+
+      if ( $("#content").val().trim() == "" )
+      {
+        var message = "본문 내용을 입력해 주세요";
+        $("#content").val("");
+        $("#content").focus();
+        alert(message);
+        return false;
+      }
+
+      if ( $("#password").val().trim() == "" )
+      {
+        var message = "패스워드를 입력해 주세요";
+        $("#password").val("");
+        $("#password").focus();
+        alert(message);
+        return false;
+      }
+    }
+  </script>
+  <br><br><br>
+    	<div colspan="2" align="center"><a href ="form.jsp"><img width="800px" style="overray" src = "../img/frame2.png"></a></div>    <!-- 자러왔다. 이미지  -->
+  
+  
+  
+  
+  <!-- Footer -->
+	<footer class="w3-center w3-black w3-padding-64" z-index=1>
+		<a href="#home" class="w3-button w3-light-grey"><i
+			class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+		<div class="w3-xlarge w3-section">
+			<a class="fa fa-facebook-official w3-hover-opacity" href="http://www.facebook.com/" ></a> 
+			<a class="fa fa-instagram w3-hover-opacity" href="https://www.instagram.com/?hl=ko"></a> 
+			<a class="fa fa-snapchat w3-hover-opacity" href=https://www.snapchat.com/></a> 
+			<a class="fa fa-pinterest-p w3-hover-opacity" href="https://www.pinterest.co.kr/"></a> 
+			<a class="fa fa-twitter w3-hover-opacity" href="https://twitter.com/?lang=ko"></a> 
+			<a class="fa fa-linkedin w3-hover-opacity" href="https://kr.linkedin.com/"></a>
+		</div>
+		<p>
+			Powered by <a href="http://localhost/Visualization/homepage.html"
+				title="W3.CSS" target="_blank" class="w3-hover-text-green">(주)인수합병</a>
+		</p>
+	</footer>
+  </body>
+</html>
